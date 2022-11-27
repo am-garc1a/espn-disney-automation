@@ -4,7 +4,10 @@ Feature: Login
   As a valid user
   I want to login successfully
 
-  Scenario: Login successful
+  Scenario Outline: Login successful
     Given navigation to login page
     When enter valid credentials "<email>" "<password>"
     Then should be taken to main page
+    Examples:
+      | email                 | password    |
+      | am.garcia@globant.com | TESTespn345 |

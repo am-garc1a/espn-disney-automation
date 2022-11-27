@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import utils.web.BasePage;
 
 /**
@@ -44,7 +45,7 @@ public class LoginPopUp extends BasePage {
     }
 
     /**
-     * Check login form elements are displayed.
+     * Check if login form elements are displayed.
      *
      * @return true if login form elements are displayed, otherwise false
      */

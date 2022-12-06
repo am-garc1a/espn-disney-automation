@@ -23,7 +23,7 @@ public class WebHooks {
     @After
     public void tearDown() {
         Reporter.info("Quitting driver");
-        //driver.getDriver().quit();
+        driver.getDriver().quit();
     }
 
     /**

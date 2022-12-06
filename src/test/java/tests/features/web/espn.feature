@@ -11,7 +11,7 @@ Feature: ESPN workflow
     Given User is successful sign up and is logged in "<name>" "<lastname>" "<password>"
     When User goes to the watch page
     Then The watch page elements should be displayed
-    And User should be able to return to home page
+    And User should be able to return to home page "<name>"
     And User can logout from ESPN session
 
     Examples:

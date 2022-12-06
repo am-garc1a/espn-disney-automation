@@ -6,10 +6,7 @@ import io.cucumber.java.en.Then;
 
 import io.cucumber.java.en.When;
 import org.testng.Assert;
-import pom.web.LoginPopUp;
-import pom.web.MainNavBar;
-import pom.web.SignUpPopUp;
-import pom.web.UserOptions;
+import pom.web.*;
 import utils.reporter.Reporter;
 
 public class EspnSteps {
@@ -17,6 +14,7 @@ public class EspnSteps {
     private UserOptions userOptions;
     private LoginPopUp loginPopUp;
     private SignUpPopUp signUpPopUp;
+    private WatchPage watchPage;
     private static String EMAIL = "test-email-0-@gmail.com";
 
     public void setNewEmail() {
@@ -49,21 +47,42 @@ public class EspnSteps {
 
     @When("User goes to the watch page")
     public void userGoesToTheWatchPage() {
-        System.out.println("userGoesToTheWatchPage");
+        Reporter.info("Navigating to: watch page");
+        watchPage = mainNavBar.goToWatchPage();
     }
 
     @Then("The watch page elements should be displayed")
     public void theWatchPageElementsShouldBeDisplayed() {
-        System.out.println("theWatchPageElementsShouldBeDisplayed");
+        Reporter.info("Validate watch page components are displayed");
+        Assert.assertTrue(watchPage.areWatchPageElementsDisplayed(), "Watch page component is not displayed");
+
+        Reporter.info("Validate title is present in each carousel card");
+        Assert.assertTrue(watchPage.isCarouselCardsTitleDisplayed(), "Title cards are not displayed");
+
+        watchPage.clickCarouselCard(1);
+        Reporter.info("Validate choose supplier frame is present");
+        Assert.assertTrue(watchPage.isExitFromChooseSupplierBtnDisplayed(), "Choose supplier frame is not displayed");
+        watchPage.clickExitFromChooseSupplier();
     }
 
-    @And("User should be able to return to home page")
-    public void userShouldBeAbleToReturnToHomePage() {
-        System.out.println("userShouldBeAbleToReturnToHomePage");
+    @And("User should be able to return to home page {string}")
+    public void userShouldBeAbleToReturnToHomePage(String name) {
+        Reporter.info("Navigating to: home page");
+        watchPage.goToPreviousPage();
+
+        userOptions = mainNavBar.goToUserOptions();
+        Reporter.info("Validate user still connected");
+        Assert.assertEquals(userOptions.getUsernameLogged(), (name + "!"), "User is not connected");
     }
 
     @And("User can logout from ESPN session")
     public void userCanLogoutFromESPNSession() {
-        System.out.println("userCanLogoutFromESPNSession");
+        Reporter.info("Logout action");
+        userOptions.clickLogoutButton();
+        userOptions.reloadPage();
+
+        userOptions = mainNavBar.goToUserOptions();
+        Reporter.info("Validate user is disconnected");
+        Assert.assertTrue(userOptions.isUserDisconnected(), "User still connected");
     }
 }

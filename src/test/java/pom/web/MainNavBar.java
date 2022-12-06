@@ -40,4 +40,8 @@ public class MainNavBar extends BasePage {
         return new UserOptions(super.getDriver());
     }
 
+    public WatchPage goToWatchPage() {
+        super.clickElement(watchLink, 10);
+        return new WatchPage(super.getDriver());
+    }
 }

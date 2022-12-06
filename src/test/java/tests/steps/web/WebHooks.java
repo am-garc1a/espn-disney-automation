@@ -6,9 +6,15 @@ import org.openqa.selenium.WebDriver;
 import utils.reporter.Reporter;
 import utils.web.Driver;
 
+/**
+ * WebHooks class
+ */
 public class WebHooks {
     private static Driver driver;
 
+    /**
+     * Before Hook for make initial set up
+     */
     @Before
     public void initialSetUp() {
         String url = "https://www.espnqa.com/?src=com&_adblock=true&espn=cloud";
@@ -20,6 +26,9 @@ public class WebHooks {
         driver.getDriver().manage().window().maximize();
     }
 
+    /**
+     * After Hook for tear down web-driver.
+     */
     @After
     public void tearDown() {
         Reporter.info("Quitting driver");
@@ -27,9 +36,9 @@ public class WebHooks {
     }
 
     /**
-     * Allow to get the current driver.
+     * Gets the current driver.
      *
-     * @return Current WebDriver instance
+     * @return : WebDriver instance
      */
     public static WebDriver getDriver() {
         return driver.getDriver();

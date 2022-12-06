@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import utils.web.BasePage;
 
 /**
- * MainNavBar component class.
+ * MainNavBar component class, extends from {@link utils.web.BasePage}
  */
 public class MainNavBar extends BasePage {
     @FindBy(css = ".container h1")
@@ -31,7 +31,7 @@ public class MainNavBar extends BasePage {
     /**
      * Navigate to users options.
      *
-     * @return : UserOptions
+     * @return {@link pom.web.UserOptions}
      */
     public UserOptions goToUserOptions() {
         isElementDisplayed(espnLogo, 3);
@@ -40,6 +40,11 @@ public class MainNavBar extends BasePage {
         return new UserOptions(super.getDriver());
     }
 
+    /**
+     * Navigate to users watch page.
+     *
+     * @return {@link pom.web.WatchPage}
+     */
     public WatchPage goToWatchPage() {
         super.clickElement(watchLink, 10);
         return new WatchPage(super.getDriver());

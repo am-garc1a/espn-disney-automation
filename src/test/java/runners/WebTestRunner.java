@@ -6,6 +6,6 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 @CucumberOptions(
         features = "src/test/java/tests/features",
         glue = {"tests.steps"},
-        tags = "@WebTestAutomation")
+        tags = "@EspnNavigation")
 public class WebTestRunner extends AbstractTestNGCucumberTests {
 }

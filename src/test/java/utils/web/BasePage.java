@@ -47,10 +47,11 @@ public abstract class BasePage {
     }
 
     /**
-     * Wrapper for Visibility event.
+     * Wrapper for Visibility event,
+     * should return true if element is displayed in screen, otherwise false.
      *
      * @param element : WebElement
-     * @return true if element is displayed in screen, otherwise false
+     * @return : Boolean
      */
     public Boolean isElementDisplayed(WebElement element) {
         try {
@@ -62,11 +63,12 @@ public abstract class BasePage {
     }
 
     /**
-     * Wrapper for Visibility event with explicit wait.
+     * Wrapper for Visibility event with explicit wait,
+     * should return true if element is displayed in screen, otherwise false.
      *
      * @param element : WebElement
      * @param intWait : explicit wait
-     * @return true if element is displayed in screen, otherwise false
+     * @return : Boolean
      */
     public Boolean isElementDisplayed(WebElement element, Integer intWait) {
         try {

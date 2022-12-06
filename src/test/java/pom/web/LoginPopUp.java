@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import utils.web.BasePage;
 
 /**
- * Login PopUp class.
+ * Login PopUp class, extends from {@link utils.web.BasePage}
  */
 public class LoginPopUp extends BasePage {
     @FindBy(id = "logo")
@@ -44,12 +44,13 @@ public class LoginPopUp extends BasePage {
         super(driver);
     }
 
+
     /**
      * Check if login form elements are displayed.
      *
-     * @return true if login form elements are displayed, otherwise false
+     * @return : Boolean
      */
-    public boolean areLoginFormElementsDisplayed() {
+    public Boolean areLoginFormElementsDisplayed() {
         return isElementDisplayed(espnLogoForm, 3) &&
                 isElementDisplayed(emailInputForm, 3) &&
                 isElementDisplayed(passwordInputForm, 3) &&
@@ -60,7 +61,7 @@ public class LoginPopUp extends BasePage {
     /**
      * Navigate to signUp popup.
      *
-     * @return SignUpPopUp
+     * @return {@link pom.web.SignUpPopUp}
      */
     public SignUpPopUp clickSingUpButton() {
         clickElement(signUpButtonSubmitForm, 0);

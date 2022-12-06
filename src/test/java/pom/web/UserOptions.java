@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import utils.web.BasePage;
 
 /**
- * UserOptions component class.
+ * UserOptions component class, extends from {@link utils.web.BasePage}
  */
 public class UserOptions extends BasePage {
     @FindBy(css = ".display-user")
@@ -40,9 +40,9 @@ public class UserOptions extends BasePage {
     /**
      * Check if user is disconnected.
      *
-     * @return true if user is disconnected, otherwise false
+     * @return : Boolean
      */
-    public boolean isUserDisconnected() {
+    public Boolean isUserDisconnected() {
         return isElementDisplayed(userLabelOffline) && isElementDisplayed(loginButton);
     }
 
@@ -57,7 +57,7 @@ public class UserOptions extends BasePage {
     /**
      * Navigate to login popup.
      *
-     * @return LoginPopUp
+     * @return {@link pom.web.LoginPopUp}
      */
     public LoginPopUp clickLoginButton() {
         clickElement(loginButton, 3);
@@ -68,7 +68,7 @@ public class UserOptions extends BasePage {
     /**
      * If user is logged returns name.
      *
-     * @return String name
+     * @return : String
      */
     public String getUsernameLogged() {
         if (isElementDisplayed(userLabelOnline)) {

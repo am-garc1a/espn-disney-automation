@@ -1,13 +1,13 @@
 package tests.steps.web;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.testng.Assert;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 
-import utils.reporter.Reporter;
 import pom.web.*;
+import org.testng.Assert;
+import utils.reporter.Reporter;
 
 public class EspnSteps {
     private MainNavBar mainNavBar;
@@ -22,13 +22,13 @@ public class EspnSteps {
         EMAIL = "test-email-" + randomValue + "-@gmail.com";
     }
 
-    @Given("Browser is open on ESPN page")
-    public void browserIsOpenOnESPNPage() {
+    @Given("User opens ESPN page")
+    public void userOpensESPNPage() {
         this.mainNavBar = new MainNavBar(WebHooks.getDriver());
     }
 
-    @When("User is successful signed up and is logged in {string} {string} {string}")
-    public void userIsSuccessfulSignedUpAndIsLoggedIn(String name, String lastname, String password) {
+    @When("User is successful signed up {string} {string} {string}")
+    public void userIsSuccessfulSignedUp(String name, String lastname, String password) {
         userOptions = mainNavBar.goToUserOptions();
         loginPopUp = userOptions.clickLoginButton();
 
@@ -45,11 +45,14 @@ public class EspnSteps {
         Reporter.info("Email of new user: " + EMAIL);
     }
 
-    @Then("User goes to watch page and its elements must be displayed")
-    public void userGoesToWatchPageAndItsElementsMustBeDisplayed() {
+    @And("User goes to watch page")
+    public void userGoesToWatchPage() {
         Reporter.info("Navigating to: watch page");
         watchPage = mainNavBar.goToWatchPage();
+    }
 
+    @Then("Watch page must be displayed")
+    public void watchPageMustBeDisplayed() {
         Reporter.info("Validate watch page components are displayed");
         Assert.assertTrue(watchPage.areWatchPageElementsDisplayed(), "Watch page is not displayed");
 
@@ -62,8 +65,8 @@ public class EspnSteps {
         watchPage.clickExitFromChooseSupplier();
     }
 
-    @And("User should be able to return to home page {string}")
-    public void userShouldBeAbleToReturnToHomePage(String name) {
+    @And("User returns to home page, and should still connected {string}")
+    public void userReturnsToHomePageAndShouldStillConnected(String name) {
         Reporter.info("Navigating to: home page");
         watchPage.goToPreviousPage();
 
@@ -72,8 +75,8 @@ public class EspnSteps {
         Assert.assertEquals(userOptions.getUsernameLogged(), (name + "!"), "User is not connected");
     }
 
-    @And("User can logout from ESPN session")
-    public void userCanLogoutFromESPNSession() {
+    @And("User logs out from session")
+    public void userLogsOutFromSession() {
         Reporter.info("Logout action");
         userOptions.clickLogoutButton();
         userOptions.reloadPage();

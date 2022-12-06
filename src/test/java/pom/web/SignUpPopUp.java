@@ -10,20 +10,26 @@ import utils.web.BasePage;
  * SignUp PopUp class.
  */
 public class SignUpPopUp extends BasePage {
+    @FindBy(id = "Title")
+    private WebElement titleSignUpForm;
+
+    @FindBy(id = "close")
+    private WebElement closeBtnSignUpForm;
+
     @FindBy(id = "InputFirstName")
-    private WebElement nameInputSingUpForm;
+    private WebElement nameInputSignUpForm;
 
     @FindBy(id = "InputLastName")
-    private WebElement lastNameInputSingUpForm;
+    private WebElement lastNameInputSignUpForm;
 
     @FindBy(id = "InputEmail")
-    private WebElement emailInputSingUpForm;
+    private WebElement emailInputSignUpForm;
 
     @FindBy(id = "password-new")
-    private WebElement passwordInputSingUpForm;
+    private WebElement passwordInputSignUpForm;
 
     @FindBy(id = "BtnSubmit")
-    private WebElement singUpButtonSubmitForm;
+    private WebElement signUpButtonSubmitForm;
 
     /**
      * Constructor method for SignUpPopUp.
@@ -35,15 +41,17 @@ public class SignUpPopUp extends BasePage {
     }
 
     /**
-     * Check if singup form elements are displayed.
+     * Check if signup form elements are displayed.
      *
-     * @return true if singup form elements are displayed, otherwise false
+     * @return true if signup form elements are displayed, otherwise false
      */
-    public boolean areSingUpFormElementsDisplayed() {
-        return isElementDisplayed(nameInputSingUpForm, 3) &&
-                isElementDisplayed(lastNameInputSingUpForm, 3) &&
-                isElementDisplayed(emailInputSingUpForm, 3) &&
-                isElementDisplayed(passwordInputSingUpForm, 3);
+    public boolean areSignUpFormElementsDisplayed() {
+        return isElementDisplayed(titleSignUpForm, 3) &&
+                isElementDisplayed(closeBtnSignUpForm, 3) &&
+                isElementDisplayed(nameInputSignUpForm, 3) &&
+                isElementDisplayed(lastNameInputSignUpForm, 3) &&
+                isElementDisplayed(emailInputSignUpForm, 3) &&
+                isElementDisplayed(passwordInputSignUpForm, 3);
     }
 
     /**
@@ -55,14 +63,14 @@ public class SignUpPopUp extends BasePage {
      * @param password : password
      */
     public void fillSingUpInputs(String name, String lastName, String email, String password) {
-        typeOnInput(nameInputSingUpForm, name, 0);
-        typeOnInput(lastNameInputSingUpForm, lastName, 0);
-        typeOnInput(emailInputSingUpForm, email, 0);
-        typeOnInput(passwordInputSingUpForm, password, 0);
+        typeOnInput(nameInputSignUpForm, name, 0);
+        typeOnInput(lastNameInputSignUpForm, lastName, 0);
+        typeOnInput(emailInputSignUpForm, email, 0);
+        typeOnInput(passwordInputSignUpForm, password, 0);
     }
 
     public void clickConfirmSingUpButton() {
-        isElementDisplayed(singUpButtonSubmitForm, 3);
-        clickElement(singUpButtonSubmitForm, 1);
+        isElementDisplayed(signUpButtonSubmitForm, 3);
+        clickElement(signUpButtonSubmitForm, 1);
     }
 }

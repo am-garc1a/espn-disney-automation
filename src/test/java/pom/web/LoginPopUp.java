@@ -58,18 +58,6 @@ public class LoginPopUp extends BasePage {
     }
 
     /**
-     * Login confirmation action.
-     *
-     * @param email    : email
-     * @param password : password
-     */
-    public void clickConfirmLoginButton(String email, String password) {
-        typeOnInput(emailInputForm, email, 0);
-        typeOnInput(passwordInputForm, password, 0);
-        clickElement(loginButtonSubmitForm, 0);
-    }
-
-    /**
      * Navigate to signUp popup.
      *
      * @return SignUpPopUp

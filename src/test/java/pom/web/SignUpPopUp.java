@@ -71,6 +71,6 @@ public class SignUpPopUp extends BasePage {
 
     public void clickConfirmSingUpButton() {
         isElementDisplayed(signUpButtonSubmitForm, 3);
-        clickElement(signUpButtonSubmitForm, 1);
+        clickElement(signUpButtonSubmitForm, 2);
     }
 }

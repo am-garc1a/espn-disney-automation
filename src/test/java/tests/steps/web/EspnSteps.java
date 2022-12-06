@@ -3,11 +3,11 @@ package tests.steps.web;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-
 import io.cucumber.java.en.When;
 import org.testng.Assert;
-import pom.web.*;
+
 import utils.reporter.Reporter;
+import pom.web.*;
 
 public class EspnSteps {
     private MainNavBar mainNavBar;
@@ -22,13 +22,13 @@ public class EspnSteps {
         EMAIL = "test-email-" + randomValue + "-@gmail.com";
     }
 
-    @Given("Browser has home ESPN page open")
-    public void browserHasHomeESPNPageOpen() {
+    @Given("Browser is open on ESPN page")
+    public void browserIsOpenOnESPNPage() {
         this.mainNavBar = new MainNavBar(WebHooks.getDriver());
     }
 
-    @Given("User is successful sign up and is logged in {string} {string} {string}")
-    public void userIsSuccessfulSignUpAndIsLoggedIn(String name, String lastname, String password) {
+    @When("User is successful signed up and is logged in {string} {string} {string}")
+    public void userIsSuccessfulSignedUpAndIsLoggedIn(String name, String lastname, String password) {
         userOptions = mainNavBar.goToUserOptions();
         loginPopUp = userOptions.clickLoginButton();
 
@@ -45,16 +45,13 @@ public class EspnSteps {
         Reporter.info("Email of new user: " + EMAIL);
     }
 
-    @When("User goes to the watch page")
-    public void userGoesToTheWatchPage() {
+    @Then("User goes to watch page and its elements must be displayed")
+    public void userGoesToWatchPageAndItsElementsMustBeDisplayed() {
         Reporter.info("Navigating to: watch page");
         watchPage = mainNavBar.goToWatchPage();
-    }
 
-    @Then("The watch page elements should be displayed")
-    public void theWatchPageElementsShouldBeDisplayed() {
         Reporter.info("Validate watch page components are displayed");
-        Assert.assertTrue(watchPage.areWatchPageElementsDisplayed(), "Watch page component is not displayed");
+        Assert.assertTrue(watchPage.areWatchPageElementsDisplayed(), "Watch page is not displayed");
 
         Reporter.info("Validate title is present in each carousel card");
         Assert.assertTrue(watchPage.isCarouselCardsTitleDisplayed(), "Title cards are not displayed");

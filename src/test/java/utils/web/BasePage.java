@@ -103,14 +103,14 @@ public abstract class BasePage {
     }
 
     /**
-     * Method for return to back page.
+     * Wrapper for return to back page.
      */
     public void goToPreviousPage() {
         driver.navigate().back();
     }
 
     /**
-     * Method for reload page.
+     * Wrapper for reload page.
      */
     public void reloadPage() {
         driver.navigate().refresh();

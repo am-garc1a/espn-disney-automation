@@ -44,7 +44,6 @@ public class LoginPopUp extends BasePage {
         super(driver);
     }
 
-
     /**
      * Check if login form elements are displayed.
      *
@@ -59,7 +58,7 @@ public class LoginPopUp extends BasePage {
     }
 
     /**
-     * Navigate to signUp popup.
+     * Navigate to signUp pop up.
      *
      * @return {@link pom.web.SignUpPopUp}
      */

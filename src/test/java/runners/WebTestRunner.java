@@ -3,9 +3,12 @@ package runners;
 import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 
+/**
+ * Runner class for web feature.
+ */
 @CucumberOptions(
         features = "src/test/java/tests/features",
-        glue = {"src/test/java/tests/steps"})
-public class TestRunner extends AbstractTestNGCucumberTests {
-
+        glue = {"tests.steps.web"},
+        tags = "@EspnNavigation")
+public class WebTestRunner extends AbstractTestNGCucumberTests {
 }

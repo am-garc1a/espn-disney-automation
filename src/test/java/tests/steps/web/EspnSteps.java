@@ -17,7 +17,7 @@ public class EspnSteps {
     private WatchPage watchPage;
     private static String EMAIL = "test-email-0-@gmail.com";
 
-    public void setNewEmail() {
+    private void setNewEmail() {
         int randomValue = (int) (Math.random() * 2000);
         EMAIL = "test-email-" + randomValue + "-@gmail.com";
     }
@@ -32,17 +32,18 @@ public class EspnSteps {
         userOptions = mainNavBar.goToUserOptions();
         loginPopUp = userOptions.clickLoginButton();
 
-        Reporter.info("Validate login components are displayed");
-        Assert.assertTrue(loginPopUp.areLoginFormElementsDisplayed(), "Login component is not displayed");
+        Reporter.info("Expected condition login components displayed");
+        loginPopUp.areLoginFormElementsDisplayed();
 
         signUpPopUp = loginPopUp.clickSingUpButton();
-        Reporter.info("Validate sign up components are displayed");
-        Assert.assertTrue(signUpPopUp.areSignUpFormElementsDisplayed(), "SignUp component is not displayed");
+
+        Reporter.info("Expected condition sign up components displayed");
+        signUpPopUp.areSignUpFormElementsDisplayed();
 
         setNewEmail();
+        Reporter.info("New email for account creation: " + EMAIL);
         signUpPopUp.fillSingUpInputs(name, lastname, EMAIL, password);
         signUpPopUp.clickConfirmSingUpButton();
-        Reporter.info("Email of new user: " + EMAIL);
     }
 
     @And("User goes to watch page")

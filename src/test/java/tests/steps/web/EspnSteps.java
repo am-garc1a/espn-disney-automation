@@ -12,8 +12,6 @@ import utils.reporter.Reporter;
 public class EspnSteps {
     private MainNavBar mainNavBar;
     private UserOptions userOptions;
-    private LoginPopUp loginPopUp;
-    private SignUpPopUp signUpPopUp;
     private WatchPage watchPage;
     private static String EMAIL = "test-email-0-@gmail.com";
 
@@ -30,12 +28,12 @@ public class EspnSteps {
     @When("User is successful signed up {string} {string} {string}")
     public void userIsSuccessfulSignedUp(String name, String lastname, String password) {
         userOptions = mainNavBar.goToUserOptions();
-        loginPopUp = userOptions.clickLoginButton();
+        LoginPopUp loginPopUp = userOptions.clickLoginButton();
 
         Reporter.info("Expected condition login components displayed");
         loginPopUp.areLoginFormElementsDisplayed();
 
-        signUpPopUp = loginPopUp.clickSingUpButton();
+        SignUpPopUp signUpPopUp = loginPopUp.clickSingUpButton();
 
         Reporter.info("Expected condition sign up components displayed");
         signUpPopUp.areSignUpFormElementsDisplayed();

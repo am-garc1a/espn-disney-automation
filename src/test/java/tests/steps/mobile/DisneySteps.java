@@ -37,7 +37,7 @@ public class DisneySteps {
     public void userClicksCategoryListButton() {
         Reporter.info("Expected condition Map Screen elements displayed");
         mapScreen.mapScreenElementsDisplayed();
-        Reporter.info("Click on category list");
+        Reporter.info("Click on Category List");
         categoryListComponent = mapScreen.clickCategoryListComponent();
     }
 
@@ -53,18 +53,18 @@ public class DisneySteps {
         Assert.assertTrue(categoryListComponent.categoryIsPresent("Hotels"), "Hotels option is not displayed");
     }
 
-    @Given("User is in menu screen")
-    public void userIsInMenuScreen() {
-        Reporter.info("Start Navigation to Menu Screen");
+    @Given("User is in more options screen")
+    public void userIsInMoreOptionsScreen() {
+        Reporter.info("Start Navigation to More Options Screen");
         moreOptionsScreen = dashBoardScreen.goToMoreOptionsScreen();
     }
 
     @When("User selects privacy & legal option")
     public void userSelectsPrivacyLegalOption() {
-        Reporter.info("Scroll to end more options screen action");
+        Reporter.info("Scroll to end More Options Screen action");
         moreOptionsScreen.scrollToEndMoreOptionsScreen(4);
 
-        Reporter.info("Click in privacy and legal for more info");
+        Reporter.info("Click in Privacy & Legal for more info");
         privacyAndLegalComponent = moreOptionsScreen.clickPrivacyLegalButton();
     }
 
@@ -73,7 +73,7 @@ public class DisneySteps {
         Reporter.info("Validate Privacy & Legal Title is displayed");
         Assert.assertTrue(privacyAndLegalComponent.privacyLegalTitleTitleIsDisplayed(), "Privacy & Legal List is not displayed");
 
-        Reporter.info("Validate privacy and legal elements are displayed");
+        Reporter.info("Validate Privacy & Legal elements are displayed");
         Assert.assertTrue(privacyAndLegalComponent.privacyLegalElementsAreDisplayed(), "Privacy elements are not displayed");
     }
 
@@ -87,8 +87,8 @@ public class DisneySteps {
     public void userSelectsDiningAvailabilityOption() {
         Reporter.info("Expected condition Check Dining Availability Button is displayed");
         addPlansScreen.planIsPresent("Check Dining Availability");
-        Reporter.info("Click in dining availability option");
-        addPlansScreen.clickPlan(0);
+        Reporter.info("Click in Dining Availability option");
+        addPlansScreen.clickPlan(1);
     }
 
     @Then("The party size option should be displayed")

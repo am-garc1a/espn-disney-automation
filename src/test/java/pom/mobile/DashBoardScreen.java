@@ -3,41 +3,29 @@ package pom.mobile;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.HowToUseLocators;
 import utils.mobile.BaseScreen;
-
-import static io.appium.java_client.pagefactory.LocatorGroupStrategy.ALL_POSSIBLE;
 
 /**
  * DashBoard screen.
  */
 public class DashBoardScreen extends BaseScreen {
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*android:id/button2\")")
-    private AndroidElement dismissPreferenceUpdateButton;
-
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*dismiss-icon\")")
     private AndroidElement dismissWelcome;
 
-    @HowToUseLocators(androidAutomation = ALL_POSSIBLE)
-    @AndroidFindBy(uiAutomator =
-            "new UiSelector().className(\"android.widget.ImageView\").descriptionContains(\"Map\")")
+    @AndroidFindBy(id = "android:id/button2")
+    private AndroidElement dismissPreferenceUpdateButton;
+
     @AndroidFindBy(uiAutomator =
             "new UiSelector().descriptionContains(\"Map\")")
     private AndroidElement mapButton;
 
-    @HowToUseLocators(androidAutomation = ALL_POSSIBLE)
-    @AndroidFindBy(uiAutomator =
-            "new UiSelector().className(\"android.widget.ImageView\").descriptionContains(\"Reserve\")")
     @AndroidFindBy(uiAutomator =
             "new UiSelector().descriptionContains(\"Reserve\")")
     private AndroidElement addPlansButton;
 
-    @HowToUseLocators(androidAutomation = ALL_POSSIBLE)
     @AndroidFindBy(uiAutomator =
-            "new UiSelector().className(\"android.widget.ImageView\").descriptionContains(\"More\")")
-    @AndroidFindBy(uiAutomator =
-            "new UiSelector().descriptionContains(\"More\")")
+            "new UiSelector().descriptionContains(\"More Options\")")
     private AndroidElement moreOptionsButton;
 
     /**
@@ -56,7 +44,7 @@ public class DashBoardScreen extends BaseScreen {
         if (isElementAvailable(dismissWelcome, 10)) {
             click(dismissWelcome);
         }
-        if (isElementAvailable(dismissPreferenceUpdateButton, 10)) {
+        if (isElementAvailable(dismissPreferenceUpdateButton, 5)) {
             click(dismissPreferenceUpdateButton);
         }
     }

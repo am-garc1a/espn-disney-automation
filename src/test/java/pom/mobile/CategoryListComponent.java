@@ -11,7 +11,8 @@ import java.util.List;
  * Category List Component
  */
 public class CategoryListComponent extends BaseScreen {
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*categorySelectHeader\")")
+
+    @AndroidFindBy(id = "com.disney.wdpro.dlr:id/categorySelectHeader")
     private AndroidElement selectCategoryTitle;
 
     @AndroidFindBy(uiAutomator =

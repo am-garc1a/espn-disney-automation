@@ -14,17 +14,13 @@ import static io.appium.java_client.pagefactory.LocatorGroupStrategy.ALL_POSSIBL
  */
 public class MapScreen extends BaseScreen {
 
-    @HowToUseLocators(androidAutomation = ALL_POSSIBLE)
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*filterTitle.*\")")
-    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Filter\")")
+    @AndroidFindBy(id = "com.disney.wdpro.dlr:id/filterTitle")
     private AndroidElement filterButton;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*categoryTitle\")")
+    @AndroidFindBy(id = "com.disney.wdpro.dlr:id/categoryTitle")
     private AndroidElement categoriesButton;
 
-    @HowToUseLocators(androidAutomation = ALL_POSSIBLE)
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*toggleTitle.*\")")
-    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Show List\")")
+    @AndroidFindBy(id = "com.disney.wdpro.dlr:id/toggleTitle")
     private AndroidElement showListButton;
 
     /**

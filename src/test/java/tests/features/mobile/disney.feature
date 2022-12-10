@@ -14,7 +14,7 @@ Feature: Disney workflow
 
   @DisneyNavigation
   Scenario: User can interact in privacy & legal option
-    Given User is in menu screen
+    Given User is in more options screen
     When User selects privacy & legal option
     Then Privacy & Legal options should be displayed
 

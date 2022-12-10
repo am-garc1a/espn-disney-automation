@@ -15,7 +15,7 @@ public class AddPlansScreen extends BaseScreen {
             "new UiSelector().resourceIdMatches(\".*actionSheetListView\").resourceIdMatches(\".*actionSheetItemText\")")
     private List<AndroidElement> plansList;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*filter_clear\")")
+    @AndroidFindBy(id = "com.disney.wdpro.dlr:id/filter_clear")
     private AndroidElement partySizeLabel;
 
     /**
@@ -40,10 +40,10 @@ public class AddPlansScreen extends BaseScreen {
     /**
      * Click the plan by index.
      *
-     * @param planIndex : index of plan in plans list
+     * @param planPosition : position of plan in plans list
      */
-    public void clickPlan(int planIndex) {
-        click(plansList.get(planIndex));
+    public void clickPlan(int planPosition) {
+        click(plansList.get(planPosition - 1));
     }
 
     /**

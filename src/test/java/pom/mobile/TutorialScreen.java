@@ -9,16 +9,16 @@ import utils.mobile.BaseScreen;
  * Object of the first screen that appears when we open the application.
  */
 public class TutorialScreen extends BaseScreen {
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*permission_primary_btn\")")
+    @AndroidFindBy(id = "permission_primary_btn")
     private AndroidElement getStartedButton;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*permission_primary_btn\")")
+    @AndroidFindBy(id = "permission_primary_btn")
     private AndroidElement shareLocationButton;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*android:id/button1\")")
+    @AndroidFindBy(id = "android:id/button1")
     private AndroidElement allowLocationButton;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*permission_allow_foreground_only_button\")")
+    @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button")
     private AndroidElement allowButton;
 
     /**

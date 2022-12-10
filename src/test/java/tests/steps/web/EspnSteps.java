@@ -9,6 +9,9 @@ import pom.web.*;
 import org.testng.Assert;
 import utils.reporter.Reporter;
 
+/**
+ * Espn Steps class
+ */
 public class EspnSteps {
     private MainNavBar mainNavBar;
     private UserOptions userOptions;

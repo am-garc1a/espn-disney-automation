@@ -3,6 +3,9 @@ package utils.mobile;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
+/**
+ * Mobile Driver class.
+ */
 public class DriverForMobile {
     private final AndroidDriver<AndroidElement> driver;
 

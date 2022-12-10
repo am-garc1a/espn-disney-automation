@@ -6,7 +6,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import utils.mobile.BaseScreen;
 
 /**
- * More Options screen.
+ * More Options screen,
+ * extends from {@link utils.mobile.BaseScreen}
  */
 public class MoreOptionsScreen extends BaseScreen {
 

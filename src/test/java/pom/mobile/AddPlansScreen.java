@@ -8,7 +8,7 @@ import utils.mobile.BaseScreen;
 import java.util.List;
 
 /**
- * Add PlansS screen.
+ * Add Plans screen.
  */
 public class AddPlansScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator =
@@ -38,7 +38,7 @@ public class AddPlansScreen extends BaseScreen {
     }
 
     /**
-     * Click the plan by index.
+     * Click the plan by position.
      *
      * @param planPosition : position of plan in plans list
      */

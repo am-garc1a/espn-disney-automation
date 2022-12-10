@@ -6,7 +6,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import utils.mobile.BaseScreen;
 
 /**
- * Object of the first screen that appears when we open the application.
+ * Object of the first screen that appears when we open the application,
+ * extends from {@link utils.mobile.BaseScreen}
  */
 public class TutorialScreen extends BaseScreen {
     @AndroidFindBy(id = "permission_primary_btn")

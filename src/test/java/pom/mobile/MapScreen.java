@@ -10,7 +10,7 @@ import utils.mobile.BaseScreen;
 import static io.appium.java_client.pagefactory.LocatorGroupStrategy.ALL_POSSIBLE;
 
 /**
- * Map screen.
+ * Map screen, extends from {@link utils.mobile.BaseScreen}
  */
 public class MapScreen extends BaseScreen {
 

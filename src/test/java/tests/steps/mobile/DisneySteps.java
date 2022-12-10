@@ -7,6 +7,9 @@ import org.testng.Assert;
 import pom.mobile.*;
 import utils.reporter.Reporter;
 
+/**
+ * Disney Steps class
+ */
 public class DisneySteps {
     private DashBoardScreen dashBoardScreen;
     private MapScreen mapScreen;

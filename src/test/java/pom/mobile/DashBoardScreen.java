@@ -6,7 +6,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import utils.mobile.BaseScreen;
 
 /**
- * DashBoard screen.
+ * DashBoard screen, extends from {@link utils.mobile.BaseScreen}
  */
 public class DashBoardScreen extends BaseScreen {
 

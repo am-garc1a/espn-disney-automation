@@ -8,7 +8,7 @@ import utils.mobile.BaseScreen;
 import java.util.List;
 
 /**
- * Category List Component
+ * Category List Component, extends from {@link utils.mobile.BaseScreen}
  */
 public class CategoryListComponent extends BaseScreen {
 

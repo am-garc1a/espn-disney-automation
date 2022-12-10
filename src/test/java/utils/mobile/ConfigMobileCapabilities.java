@@ -8,6 +8,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+/**
+ * Class for capabilities configuration.
+ */
 public class ConfigMobileCapabilities {
     private static final JsonParser parser = new JsonParser();
     private static final String JSON_FILE_PATH = "src/test/resources/mobile_capabilities.json";
@@ -42,7 +45,7 @@ public class ConfigMobileCapabilities {
     }
 
     /**
-     * SetUp's application.
+     * Set Up application.
      *
      * @param capabilities : DesiredCapabilities
      */
@@ -53,7 +56,7 @@ public class ConfigMobileCapabilities {
     }
 
     /**
-     * Device SetUp.
+     * Device Set Up.
      *
      * @param capabilities : DesiredCapabilities
      */

@@ -8,7 +8,8 @@ import utils.mobile.BaseScreen;
 import java.util.List;
 
 /**
- * Privacy & Legal Component.
+ * Privacy & Legal Component,
+ * extends from {@link utils.mobile.BaseScreen}
  */
 public class PrivacyAndLegalComponent extends BaseScreen {
 

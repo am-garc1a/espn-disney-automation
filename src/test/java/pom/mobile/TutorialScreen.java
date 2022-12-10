@@ -6,20 +6,20 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import utils.mobile.BaseScreen;
 
 /**
- * Object of the first screen that appears when we open the application.
+ * Object of the first screen that appears when we open the application,
+ * extends from {@link utils.mobile.BaseScreen}
  */
 public class TutorialScreen extends BaseScreen {
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*permission_primary_btn\")")
+    @AndroidFindBy(id = "permission_primary_btn")
     private AndroidElement getStartedButton;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*permission_primary_btn\")")
+    @AndroidFindBy(id = "permission_primary_btn")
     private AndroidElement shareLocationButton;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*android:id/button1\")")
+    @AndroidFindBy(id = "android:id/button1")
     private AndroidElement allowLocationButton;
 
-    @AndroidFindBy(uiAutomator =
-            "new UiSelector().resourceIdMatches(\".*com.android.packageinstaller:id/permission_allow_button\")")
+    @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button")
     private AndroidElement allowButton;
 
     /**
@@ -59,12 +59,4 @@ public class TutorialScreen extends BaseScreen {
         click(allowButton);
         return new DashBoardScreen(driver);
     }
-
-    /*
-    public DashBoardScreen skipPermissions() {
-        * Navigate to Dashboard Screen from Tutorial Screen.
-     *
-     * @author am.garcia
-        return new DashBoardScreen(driver);
-    }*/
 }

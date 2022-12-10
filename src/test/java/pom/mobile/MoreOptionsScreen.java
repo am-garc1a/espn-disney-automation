@@ -6,7 +6,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import utils.mobile.BaseScreen;
 
 /**
- * More Options screen.
+ * More Options screen,
+ * extends from {@link utils.mobile.BaseScreen}
  */
 public class MoreOptionsScreen extends BaseScreen {
 
@@ -34,11 +35,12 @@ public class MoreOptionsScreen extends BaseScreen {
     /**
      * Scrolls to end more options screen.
      */
-    public void scrollToEndMoreOptionsScreen() {
-        // REVISAR CICLO INIFNITO
+    public void scrollToEndMoreOptionsScreen(int maxSearchTries) {
+        int scrollCounting = 0;
         do {
             swipeVertical(-0.5f);
-        } while (!privacyLegalButtonIsDisplayed());
+            scrollCounting++;
+        } while (!privacyLegalButtonIsDisplayed() && scrollCounting < maxSearchTries);
     }
 
     /**

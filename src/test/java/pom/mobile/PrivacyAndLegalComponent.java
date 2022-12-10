@@ -8,14 +8,15 @@ import utils.mobile.BaseScreen;
 import java.util.List;
 
 /**
- * Privacy & Legal Component.
+ * Privacy & Legal Component,
+ * extends from {@link utils.mobile.BaseScreen}
  */
 public class PrivacyAndLegalComponent extends BaseScreen {
-    @AndroidFindBy(uiAutomator = "new UiSelector().descriptionContains(\"Privacy & Legal\")")
+
+    @AndroidFindBy(id = "com.disney.wdpro.dlr:id/snowball_header_screen_name")
     private AndroidElement privacyLegalTitle;
 
-    @AndroidFindBy(uiAutomator =
-            "new UiSelector().resourceIdMatches(\".*privacy_and_legal_elements\").resourceIdMatches(\".*txt_element\")")
+    @AndroidFindBy(id = "com.disney.wdpro.dlr:id/txt_element")
     private List<AndroidElement> privacyLegalList;
 
     /**

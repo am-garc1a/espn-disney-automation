@@ -1,30 +1,29 @@
 package utils.web;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
- * Driver class.
+ * Web Driver class.
  */
-public class Driver {
+public class DriverForWeb {
 
-    private final WebDriver driver;
+    private final org.openqa.selenium.WebDriver driver;
 
     /**
      * Constructor method for driver.
      */
-    public Driver() {
+    public DriverForWeb() {
         WebDriverManager.chromedriver().setup();
         this.driver = new ChromeDriver();
     }
 
     /**
-     * Get driver.
+     * Get web driver.
      *
      * @return : WebDriver
      */
-    public WebDriver getDriver() {
+    public org.openqa.selenium.WebDriver getDriver() {
         return driver;
     }
 }

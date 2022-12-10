@@ -10,21 +10,17 @@ import utils.mobile.BaseScreen;
 import static io.appium.java_client.pagefactory.LocatorGroupStrategy.ALL_POSSIBLE;
 
 /**
- * Map screen.
+ * Map screen, extends from {@link utils.mobile.BaseScreen}
  */
 public class MapScreen extends BaseScreen {
 
-    @HowToUseLocators(androidAutomation = ALL_POSSIBLE)
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*filterTitle.*\")")
-    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Filter\")")
+    @AndroidFindBy(id = "com.disney.wdpro.dlr:id/filterTitle")
     private AndroidElement filterButton;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*categoryTitle\")")
+    @AndroidFindBy(id = "com.disney.wdpro.dlr:id/categoryTitle")
     private AndroidElement categoriesButton;
 
-    @HowToUseLocators(androidAutomation = ALL_POSSIBLE)
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*toggleTitle.*\")")
-    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Show List\")")
+    @AndroidFindBy(id = "com.disney.wdpro.dlr:id/toggleTitle")
     private AndroidElement showListButton;
 
     /**
@@ -37,30 +33,14 @@ public class MapScreen extends BaseScreen {
     }
 
     /**
-     * Checks if Filter Button is displayed in screen.
+     * Checks if Map Screen Elements are displayed in screen.
      *
      * @return : Boolean
      */
-    public Boolean filterIsDisplayed() {
-        return isElementAvailable(filterButton);
-    }
-
-    /**
-     * Checks if Categories Button is displayed in screen.
-     *
-     * @return : Boolean
-     */
-    public Boolean categoriesIsDisplayed() {
-        return isElementAvailable(categoriesButton);
-    }
-
-    /**
-     * Checks if Show List Button is displayed in screen.
-     *
-     * @return : Boolean
-     */
-    public Boolean showListIsDisplayed() {
-        return isElementAvailable(showListButton);
+    public Boolean mapScreenElementsDisplayed() {
+        return isElementAvailable(filterButton) &&
+                isElementAvailable(categoriesButton) &&
+                isElementAvailable(showListButton);
     }
 
     /**

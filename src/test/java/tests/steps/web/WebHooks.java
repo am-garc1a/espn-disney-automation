@@ -2,23 +2,22 @@ package tests.steps.web;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import org.openqa.selenium.WebDriver;
 import utils.reporter.Reporter;
-import utils.web.Driver;
+import utils.web.DriverForWeb;
 
 /**
  * WebHooks class
  */
 public class WebHooks {
-    private static Driver driver;
+    private static DriverForWeb driver;
 
     /**
-     * Before Hook for make initial set up
+     * Before hook for make initial set up
      */
     @Before
     public void initialSetUp() {
         String url = "https://www.espnqa.com/?src=com&_adblock=true&espn=cloud";
-        driver = new Driver();
+        driver = new DriverForWeb();
         Reporter.info("Deleting cookies");
         driver.getDriver().manage().deleteAllCookies();
         Reporter.info("Navigating to: " + url);
@@ -27,7 +26,7 @@ public class WebHooks {
     }
 
     /**
-     * After Hook for tear down web-driver.
+     * After hook for tear down web-driver.
      */
     @After
     public void tearDown() {
@@ -40,7 +39,7 @@ public class WebHooks {
      *
      * @return : WebDriver instance
      */
-    public static WebDriver getDriver() {
+    public static org.openqa.selenium.WebDriver getDriver() {
         return driver.getDriver();
     }
 }

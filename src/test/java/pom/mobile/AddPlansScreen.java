@@ -8,15 +8,15 @@ import utils.mobile.BaseScreen;
 import java.util.List;
 
 /**
- * Add PlansS screen.
+ * Add Plans screen.
  */
 public class AddPlansScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator =
             "new UiSelector().resourceIdMatches(\".*actionSheetListView\").resourceIdMatches(\".*actionSheetItemText\")")
     private List<AndroidElement> plansList;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*filter_clear\")")
-    private AndroidElement partySizeLable;
+    @AndroidFindBy(id = "com.disney.wdpro.dlr:id/filter_clear")
+    private AndroidElement partySizeLabel;
 
     /**
      * Constructor method for AddPlansScreen.
@@ -38,21 +38,21 @@ public class AddPlansScreen extends BaseScreen {
     }
 
     /**
-     * Click the plan by index.
+     * Click the plan by position.
      *
-     * @param planIndex : index of plan in plans list
+     * @param planPosition : position of plan in plans list
      */
-    public void clickPlan(int planIndex) {
-        click(plansList.get(planIndex));
+    public void clickPlan(int planPosition) {
+        click(plansList.get(planPosition - 1));
     }
 
     /**
-     * Checks if Party Size lable is displayed in screen.
+     * Checks if Party Size label is displayed in screen.
      *
      * @return : Boolean
      */
     public Boolean diningAvailabilityComponentDisplayed() {
-        return isElementAvailable(partySizeLable, 5);
+        return isElementAvailable(partySizeLabel, 5);
     }
 
 }

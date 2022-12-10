@@ -8,10 +8,11 @@ import utils.mobile.BaseScreen;
 import java.util.List;
 
 /**
- * Category List Component
+ * Category List Component, extends from {@link utils.mobile.BaseScreen}
  */
 public class CategoryListComponent extends BaseScreen {
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*categorySelectHeader\")")
+
+    @AndroidFindBy(id = "com.disney.wdpro.dlr:id/categorySelectHeader")
     private AndroidElement selectCategoryTitle;
 
     @AndroidFindBy(uiAutomator =

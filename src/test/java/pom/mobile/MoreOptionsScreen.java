@@ -34,11 +34,12 @@ public class MoreOptionsScreen extends BaseScreen {
     /**
      * Scrolls to end more options screen.
      */
-    public void scrollToEndMoreOptionsScreen() {
-        // REVISAR CICLO INIFNITO
+    public void scrollToEndMoreOptionsScreen(int maxSearchTries) {
+        int scrollCounting = 0;
         do {
             swipeVertical(-0.5f);
-        } while (!privacyLegalButtonIsDisplayed());
+            scrollCounting++;
+        } while (!privacyLegalButtonIsDisplayed() && scrollCounting < maxSearchTries);
     }
 
     /**

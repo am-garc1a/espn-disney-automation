@@ -53,10 +53,10 @@ public class DashBoardScreen extends BaseScreen {
      * Dismiss PopUps to have clean dashboard.
      */
     public void dismissPopUps() {
-        if (isElementAvailable(dismissWelcome, 12)) {
+        if (isElementAvailable(dismissWelcome, 10)) {
             click(dismissWelcome);
         }
-        if (isElementAvailable(dismissPreferenceUpdateButton, 12)) {
+        if (isElementAvailable(dismissPreferenceUpdateButton, 10)) {
             click(dismissPreferenceUpdateButton);
         }
     }
@@ -67,7 +67,6 @@ public class DashBoardScreen extends BaseScreen {
      * @return {@link pom.mobile.MapScreen}
      */
     public MapScreen goToMapScreen() {
-        //dismissPopUps();
         click(mapButton);
         return new MapScreen(driver);
     }
@@ -78,7 +77,6 @@ public class DashBoardScreen extends BaseScreen {
      * @return {@link pom.mobile.AddPlansScreen}
      */
     public AddPlansScreen goToAddPlansScreen() {
-        //dismissPopUps();
         click(addPlansButton);
         return new AddPlansScreen(driver);
     }
@@ -89,7 +87,6 @@ public class DashBoardScreen extends BaseScreen {
      * @return {@link pom.mobile.MoreOptionsScreen}
      */
     public MoreOptionsScreen goToMoreOptionsScreen() {
-        //dismissPopUps();
         click(moreOptionsButton);
         return new MoreOptionsScreen(driver);
     }

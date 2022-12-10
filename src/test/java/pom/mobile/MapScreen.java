@@ -37,30 +37,14 @@ public class MapScreen extends BaseScreen {
     }
 
     /**
-     * Checks if Filter Button is displayed in screen.
+     * Checks if Map Screen Elements are displayed in screen.
      *
      * @return : Boolean
      */
-    public Boolean filterIsDisplayed() {
-        return isElementAvailable(filterButton);
-    }
-
-    /**
-     * Checks if Categories Button is displayed in screen.
-     *
-     * @return : Boolean
-     */
-    public Boolean categoriesIsDisplayed() {
-        return isElementAvailable(categoriesButton);
-    }
-
-    /**
-     * Checks if Show List Button is displayed in screen.
-     *
-     * @return : Boolean
-     */
-    public Boolean showListIsDisplayed() {
-        return isElementAvailable(showListButton);
+    public Boolean mapScreenElementsDisplayed() {
+        return isElementAvailable(filterButton) &&
+                isElementAvailable(categoriesButton) &&
+                isElementAvailable(showListButton);
     }
 
     /**

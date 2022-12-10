@@ -16,7 +16,7 @@ public class AddPlansScreen extends BaseScreen {
     private List<AndroidElement> plansList;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*filter_clear\")")
-    private AndroidElement partySizeLable;
+    private AndroidElement partySizeLabel;
 
     /**
      * Constructor method for AddPlansScreen.
@@ -47,12 +47,12 @@ public class AddPlansScreen extends BaseScreen {
     }
 
     /**
-     * Checks if Party Size lable is displayed in screen.
+     * Checks if Party Size label is displayed in screen.
      *
      * @return : Boolean
      */
     public Boolean diningAvailabilityComponentDisplayed() {
-        return isElementAvailable(partySizeLable, 5);
+        return isElementAvailable(partySizeLabel, 5);
     }
 
 }

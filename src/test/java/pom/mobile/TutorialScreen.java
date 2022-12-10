@@ -18,8 +18,7 @@ public class TutorialScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*android:id/button1\")")
     private AndroidElement allowLocationButton;
 
-    @AndroidFindBy(uiAutomator =
-            "new UiSelector().resourceIdMatches(\".*com.android.packageinstaller:id/permission_allow_button\")")
+    @AndroidFindBy(uiAutomator = "new UiSelector().resourceIdMatches(\".*permission_allow_foreground_only_button\")")
     private AndroidElement allowButton;
 
     /**
@@ -59,12 +58,4 @@ public class TutorialScreen extends BaseScreen {
         click(allowButton);
         return new DashBoardScreen(driver);
     }
-
-    /*
-    public DashBoardScreen skipPermissions() {
-        * Navigate to Dashboard Screen from Tutorial Screen.
-     *
-     * @author am.garcia
-        return new DashBoardScreen(driver);
-    }*/
 }

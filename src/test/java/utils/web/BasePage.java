@@ -23,7 +23,7 @@ public abstract class BasePage {
      */
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        this.wait = new WebDriverWait(driver, 2);
         initElements(driver, this);
     }
 
@@ -43,7 +43,7 @@ public abstract class BasePage {
      * @return : WebDriverWait
      */
     private WebDriverWait getWait(Integer intWait) {
-        return new WebDriverWait(driver, Duration.ofSeconds(intWait));
+        return new WebDriverWait(driver, intWait);
     }
 
     /**

@@ -36,7 +36,7 @@ public abstract class BaseScreen {
      */
     public BaseScreen(AndroidDriver<AndroidElement> driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, 10);
         PageFactory.initElements(new AppiumFieldDecorator(
                 driver, Duration.ofSeconds(0)), this);
     }
@@ -48,7 +48,7 @@ public abstract class BaseScreen {
      * @return : WebDriverWait
      */
     private WebDriverWait getWait(Integer intWait) {
-        return new WebDriverWait(driver, Duration.ofSeconds(intWait));
+        return new WebDriverWait(driver, intWait);
     }
 
     /**
